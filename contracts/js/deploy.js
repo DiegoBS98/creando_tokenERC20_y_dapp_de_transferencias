@@ -2,7 +2,7 @@ const HDWalletProvider = require('truffle-hdwallet-provider');
 const Web3 = require('web3');
 const {abi, bytecode} = require('./compile');  //Variables obtenidas de la compilación necesarias para el despliegue
 const urlProvider = 'http://localhost:8545';//Url del provedor (Ganache)
-const mnemonic =  'pitch piano economy target axis gold record provide purchase sort charge spoil'; //Frase semilla para importar las cuentas de ganache
+const mnemonic =  'lizard author dune eagle vacant naive motion memory keep quality exist panic'; //Frase semilla para importar las cuentas de ganache
 const provider = new HDWalletProvider(mnemonic, urlProvider); // Instanciamos el proveedor
 const web3 = new Web3(provider);
 

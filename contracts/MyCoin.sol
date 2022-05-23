@@ -51,7 +51,7 @@ contract MyCoin is IERC20 {
     function balanceOf(address _owner) public view override returns(uint256) {
         return _balances[_owner];
     }
-
+    //Saber los tokens que el usuario ha autorizado a manejar
     function allowance(address _owner, address spender) public view override returns(uint256){
         return _allowed[_owner][spender];
     }
@@ -65,14 +65,14 @@ contract MyCoin is IERC20 {
         emit Transfer(msg.sender, to, value); //Emitimos el evento de transferncia
         return true;
     }
-    //Aprovación de la transacción
+    //Aprovación de permisos para manejar esos tokens
     function approve(address spender, uint256 value) public override returns(bool){
 
         require(spender != address(0)); //Confirmamos que la dirección de envio sea distinta a la de recepción
 
-        _allowed[msg.sender][spender] = value;
+        _allowed[msg.sender][spender] = value; //Añadimos los tokens a los que el usuario ha dado permiso
 
-        emit Approval(msg.sender, spender, value);
+        emit Approval(msg.sender, spender, value); //Emitimos el evento 
         return true;
     }
 
@@ -85,7 +85,7 @@ contract MyCoin is IERC20 {
 
         _balances[from] -= value; //Descontamos los tokens al usuario emisor
         _balances[to] += value; //Añadimos al usuario receptor
-        _allowed[from][msg.sender] -= value;
+        _allowed[from][msg.sender] -= value; //Restamos los tokens que tiene permiso a manejar
         emit Transfer(from, to, value); //Emitimos el evento de transferncia
         return true;
     }
