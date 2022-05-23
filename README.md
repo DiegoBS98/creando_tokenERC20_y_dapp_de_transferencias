@@ -2,7 +2,7 @@
 
 En este proyecto, se lleva a cabo la creación de un **token ERC20 ("DCOIN")**.
 Este token es desplegado en la blockchain local que nos ofrece **Ganache**.
-También, contiene un **aplicativo descentralizado** que nos permite realizar transferencias con nuestro token utilizando metamask
+También, he desarrollado un **aplicativo descentralizado** que nos permite realizar transferencias con nuestro token a otras address utilizando metamask
 
 ### Pre-requisitos:
   - Tener instalado Ganache para poder ejecutar una blockchain local
